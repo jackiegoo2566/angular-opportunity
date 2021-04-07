@@ -1,0 +1,30 @@
+
+.wrap {
+  padding: 0 20px;
+  .header {
+    height: 60px;
+    width: 100%;
+  }
+  
+  .content {
+    .actions-wrap {
+      display: flex;
+      .search-wrap {
+        width: 75%;
+        input {
+          width: 20%;
+          margin: 0 10px 0 0;
+        }
+        button {
+          width: 20%;
+        }
+      }
+      .create-wrap {
+        width: 25%;
+        button {
+          width: 80%;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+<table>
+  <thead>
+    <tr>
+      <th class="no">No</th>
+      <th>Name</th>
+      <th>Status</th>
+      <th>Customer</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let abc of listOpportunities; let i = index">
+      <td>{{i + 1}}</td>
+      <td>{{abc.name}}</td>
+      <td>{{abc.status}}</td>
+      <td>{{abc.customer}}</td>
+      <td (click)="deleteItem(i)">x</td>
+    </tr>
+  </tbody>
+</table>

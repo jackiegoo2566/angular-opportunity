@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angular-opportunity"
+    }
+  },
+  "defaultProject": "angular-opportunity",
+  "cli": {
+    "analytics": false
+  }
 }
