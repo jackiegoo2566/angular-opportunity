@@ -1,9 +1,14 @@
 <div class="wrap">
   <div class="content content-wrap">
+    {{pushString}}
     <app-search></app-search>
     <app-table 
       [listOpportunities]="dataToDisplay"
-      (idToDelete)="deleteItemParent($event)">
+      (idToDelete)="deleteItemParent($event)"
+      (writeIdWillBeDeleted)="writeIdWillBeDeleted($event)"
+      (pushString)="abc($event)"
+      [ten]="name"
+      >
     </app-table>
   </div>
 </div>

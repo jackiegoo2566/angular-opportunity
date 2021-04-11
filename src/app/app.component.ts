@@ -60,6 +60,8 @@ export class AppComponent {
   ];
 
   dataToDisplay = [];
+  name = "Dao an cuc";
+  idToBeDeleted = '';
 
   constructor() {
     this.dataToDisplay = this.dataOriginal;
@@ -87,13 +89,20 @@ export class AppComponent {
   // }
 
   // hàm delete item của component cha
-  
-
+  pushString = '';
   deleteItemParent(id: any) {
     // hàm này chạy cuối cùng,
     // sau khi đã nhận được sự kiện từ template HTML
 
     // nhận được id từ thằng con
     this.dataToDisplay.splice(id, 1);
+  }
+
+  writeIdWillBeDeleted(event):void {
+    this.idToBeDeleted = event;
+  }
+
+  abc(e) {
+    this.pushString = e;
   }
 }
