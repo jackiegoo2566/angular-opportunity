@@ -1,10 +1,3 @@
-<button (click)="push('hehe')">
-  Push a string
-</button>
-<button (click)="push('abc')">
-  Push a string abc
-</button>
-{{ten}}
 <table>
   <thead>
     <tr>
@@ -16,12 +9,12 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let abc of listOpportunities; let i = index">
+    <tr *ngFor="let abc of listOpportunities | filterNameForTable:searchName; let i = index">
       <td>{{i + 1}}</td>
       <td>{{abc.name}}</td>
       <td>{{abc.status}}</td>
       <td>{{abc.customer}}</td>
-      <td (click)="deleteItem(i)">x</td>
+      <td (click)="deleteInternal(i)">x</td>
     </tr>
   </tbody>
 </table>

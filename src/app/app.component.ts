@@ -1,12 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { TableComponent } from './table/table.component';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  templateUrl: './app.component.html'
 })
-export class AppComponent {
-  title = 'angular-opportunity';
+export class AppComponent implements OnInit {
+  @ViewChild('table') table: TableComponent;
 
   dataOriginal = [
     {
@@ -58,51 +58,24 @@ export class AppComponent {
     "date": "",
     }
   ];
-
   dataToDisplay = [];
-  name = "Dao an cuc";
-  idToBeDeleted = '';
+  randomString = '';
 
-  constructor() {
+  searchName = '';
+
+  constructor(
+  ) {
     this.dataToDisplay = this.dataOriginal;
   }
 
-  // search() {
-  //   if (this.searchData.Name == '' &&
-  //       this.searchData.Status == '' &&
-  //       this.searchData.Customer == '') {
-  //     this.dataToDisplay = this.dataOriginal
-  //   }
+  ngOnInit() {
+  }
 
-  //   this.dataToDisplay = [];
-
-  //   for (let i = 0; i < this.dataOriginal.length; i++) {
-  //     let currentData = this.dataOriginal[i];
-
-  //     if (currentData.name.toLowerCase().includes(this.searchData.Name.toLowerCase()) &&
-  //         currentData.status.toLowerCase().includes(this.searchData.Status.toLowerCase()) &&
-  //         currentData.customer.toLowerCase().includes(this.searchData.Customer.toLowerCase())
-  //     ) {
-  //       this.dataToDisplay.push(currentData);
-  //     }
-  //   }
-  // }
-
-  // hàm delete item của component cha
-  pushString = '';
   deleteItemParent(id: any) {
-    // hàm này chạy cuối cùng,
-    // sau khi đã nhận được sự kiện từ template HTML
-
-    // nhận được id từ thằng con
     this.dataToDisplay.splice(id, 1);
   }
 
-  writeIdWillBeDeleted(event):void {
-    this.idToBeDeleted = event;
-  }
-
-  abc(e) {
-    this.pushString = e;
+  searchNameEventParent(name: string) {
+    this.searchName = name;
   }
 }

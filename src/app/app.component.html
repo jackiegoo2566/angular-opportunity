@@ -1,13 +1,14 @@
 <div class="wrap">
   <div class="content content-wrap">
-    {{pushString}}
-    <app-search></app-search>
-    <app-table 
+    <app-search (searchNameEvent)="searchNameEventParent($event)">
+
+
+    </app-search>
+    <app-table #table
+      [searchName]="searchName"
       [listOpportunities]="dataToDisplay"
+      [stringChanging]="randomString"
       (idToDelete)="deleteItemParent($event)"
-      (writeIdWillBeDeleted)="writeIdWillBeDeleted($event)"
-      (pushString)="abc($event)"
-      [ten]="name"
       >
     </app-table>
   </div>

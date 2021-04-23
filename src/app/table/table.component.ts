@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-table',
@@ -7,20 +7,23 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class TableComponent implements OnInit {
   @Input() listOpportunities: any[]; // cái này là biến
-  @Input() ten: string;
-  @Output() writeIdWillBeDeleted = new EventEmitter<any>();
-  @Output() pushString = new EventEmitter<string>();
-  constructor() {
+  @Output() idToDelete = new EventEmitter<any>();
+  @Input() stringChanging: string;
+
+  @Input() searchName: string;
+
+  constructor(
+
+  ) {
+
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
-  deleteItem(index): void {
-    this.writeIdWillBeDeleted.emit(index);
-  }
-
-  push(abc: string) {
-    this.pushString.emit(abc)
+  protected deleteInternal(i) {
+    if (this.listOpportunities !== null) {
+      this.listOpportunities.splice(i, 1)
+    }
   }
 }

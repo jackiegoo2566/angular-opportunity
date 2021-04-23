@@ -7,13 +7,15 @@ import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { SearchComponent } from './search/search.component';
 import { TableComponent } from './table/table.component';
+import { FilterNameForTable } from './filterNameForTable.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     SearchComponent,
-    TableComponent
+    TableComponent,
+    FilterNameForTable
   ],
   imports: [
     BrowserModule,
