@@ -8,6 +8,29 @@ import { HeaderComponent } from './header/header.component';
 import { SearchComponent } from './search/search.component';
 import { TableComponent } from './table/table.component';
 import { FilterNameForTable } from './filterNameForTable.pipe';
+import { LoginComponent } from './login/login.component';
+import { RouterModule, Routes } from '@angular/router';
+import { OpComponent } from './op/op.component';
+
+const routers: Routes = [
+  {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full'
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'table2',
+    component: LoginComponent
+  },
+  {
+    path: 'table',
+    component: OpComponent
+  }
+]
 
 @NgModule({
   declarations: [
@@ -15,12 +38,15 @@ import { FilterNameForTable } from './filterNameForTable.pipe';
     HeaderComponent,
     SearchComponent,
     TableComponent,
-    FilterNameForTable
+    FilterNameForTable,
+    LoginComponent,
+    OpComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(routers)
   ],
   providers: [],
   bootstrap: [AppComponent]

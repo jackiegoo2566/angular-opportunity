@@ -1,15 +1,2 @@
-<div class="wrap">
-  <div class="content content-wrap">
-    <app-search (searchNameEvent)="searchNameEventParent($event)">
-
-
-    </app-search>
-    <app-table #table
-      [searchName]="searchName"
-      [listOpportunities]="dataToDisplay"
-      [stringChanging]="randomString"
-      (idToDelete)="deleteItemParent($event)"
-      >
-    </app-table>
-  </div>
-</div>
+<app-header></app-header>
+<router-outlet></router-outlet>
