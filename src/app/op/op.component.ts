@@ -76,13 +76,13 @@ export class OpComponent {
   randomString = '';
 
   searchName = '';
-
   constructor(
   ) {
     this.dataToDisplay = this.dataOriginal;
   }
 
   ngOnInit() {
+  
   }
 
   deleteItemParent(id: any) {
