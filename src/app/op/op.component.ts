@@ -76,8 +76,7 @@ export class OpComponent {
   randomString = '';
 
   searchName = '';
-  constructor(
-  ) {
+  constructor() {
     this.dataToDisplay = this.dataOriginal;
   }
 
