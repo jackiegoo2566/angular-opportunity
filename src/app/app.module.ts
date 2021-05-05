@@ -11,6 +11,7 @@ import { FilterNameForTable } from './filterNameForTable.pipe';
 import { LoginComponent } from './login/login.component';
 import { RouterModule, Routes } from '@angular/router';
 import { OpComponent } from './op/op.component';
+import { AbcComponent } from './abc/abc.component';
 
 const routers: Routes = [
   {
@@ -29,6 +30,10 @@ const routers: Routes = [
   {
     path: 'table',
     component: OpComponent
+  },
+  {
+    path: 'abc',
+    component: AbcComponent
   }
 ]
 
@@ -40,7 +45,8 @@ const routers: Routes = [
     TableComponent,
     FilterNameForTable,
     LoginComponent,
-    OpComponent
+    OpComponent,
+    AbcComponent
   ],
   imports: [
     BrowserModule,
