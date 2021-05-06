@@ -38,15 +38,15 @@ export class LoginComponent {
   loginData = [
   {
     "id":"bangzino",
-    "password":"thisispassword"
+    "password":"123"
   },
   {
     "id":"nhandao",
-    "password":"toikhongnho"
+    "password":"456"
   },
   {
     "id":"haison",
-    "password":"sonnao"
+    "password":"789"
   }
   ]
   constructor(private router: Router){ 
@@ -57,9 +57,9 @@ export class LoginComponent {
     console.log(this.userID, this.userPassword)
     for (let i = 0; i<this.loginData.length; i++){
       if(this.userID == this.loginData[i].id && this.userPassword == this.loginData[i].password){
-        this.router.navigate(['/table']);
-      }else{
-
+         return this.router.navigate(['/table']);
+      } else {
+        return alert("Please try it again")
       }
     }
   }

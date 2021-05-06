@@ -1,11 +1,13 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, Output, ViewChild } from '@angular/core';
 import { TableComponent } from '../table/table.component';
+import { Router } from '@angular/router'; 
 
 @Component({
   selector: 'app-op',
   template: `
     <div class="wrap">
       <div class="content content-wrap">
+        <button (click)="logoutActive()"> logout </button>
         <app-search (searchNameEvent)="searchNameEventParent($event)">
         </app-search>
         <app-table #table
@@ -76,14 +78,17 @@ export class OpComponent {
   randomString = '';
 
   searchName = '';
-  constructor() {
+  constructor(public router: Router) {
     this.dataToDisplay = this.dataOriginal;
   }
 
   ngOnInit() {
   
   }
-
+  logoutActive(){
+    window.confirm("Do you want to Logout?");
+    return this.router.navigate(['/login']);
+  }
   deleteItemParent(id: any) {
     this.dataToDisplay.splice(id, 1);
   }

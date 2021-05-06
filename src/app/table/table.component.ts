@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 @Component({
   selector: 'app-table',
